@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public string PlayerName = "Player";
     public float MaxEnergy = 5.0f;
     public float EnergyRegen = 0.01f;
     public float Energy = 5.0f;
