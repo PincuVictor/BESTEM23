@@ -52,16 +52,14 @@ public class GameManager : MonoBehaviour
     {
         if(player == 1)
         {
-            TList[currentPlayer1IndexInList] = 0;
+            TList[currentPlayer1IndexInList] = -1;
+            Debug.Log("Eliminat" + currentPlayer1IndexInList);
         }else if(player == 2)
         {
-            TList[currentPlayer2IndexInList] = 0;
-
+            TList[currentPlayer2IndexInList] = -1;
+            Debug.Log("Eliminat" + currentPlayer2IndexInList);
         }
-
-        NewRound();
-
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("IntermissionScene");
     }
     public string GetPlayer1Name()
     {
@@ -89,7 +87,7 @@ public class GameManager : MonoBehaviour
 
         if(players.Count != 2)
         {
-            for (int i = 0; i < currentPlayer2IndexInList; i++)
+            for (int i = 0; i < currentPlayer2IndexInList + 1; i++)
             {
                 if (TList[i] != -1)
                 {
@@ -102,12 +100,13 @@ public class GameManager : MonoBehaviour
 
         if (players.Count == 1)
         {
-            SceneManager.LoadScene("MenuScene");
+            SceneManager.LoadScene("WinnerScene");
         }
         else
         {
             currentPlayer1IndexInList = players[0];
             currentPlayer2IndexInList = players[1];
+            SceneManager.LoadScene("GameScene");
         }
 
 
