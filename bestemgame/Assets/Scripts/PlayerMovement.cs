@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 velocity;
-    [SerializeField] private String left;
-    [SerializeField] private String right;
     private bool movingLeft, movingRight;
     private void Awake()
     {
@@ -24,22 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if( Input.GetKeyDown(left) )
-        {
-            velocity.x += -2f;
-        }
-        if( Input.GetKeyUp(left) )
-        {
-            velocity.x += 2f;
-        }
-        if( Input.GetKeyDown(right) )
-        {
-            velocity.x += 2f;
-        }
-        if( Input.GetKeyUp(right) )
-        {
-            velocity.x += -2f;
-        }
+
+    }
+
+    public void Move(Vector2 vel)
+    {
+        velocity.x = vel.x;
     }
 
     void FixedUpdate()

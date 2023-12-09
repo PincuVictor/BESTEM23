@@ -6,6 +6,7 @@ public class PlayerBlock : MonoBehaviour
 {
     private PlayerStats stats;
     private Timer blockTimer;
+    private Timer blockDurationTimer;
 
     [SerializeField] private GameObject highBlock;
     [SerializeField] private GameObject lowBlock;
@@ -15,30 +16,25 @@ public class PlayerBlock : MonoBehaviour
     {
         stats = GetComponent<PlayerStats>();
         blockTimer = new Timer();
+        blockDurationTimer = new Timer();
         blockTimer.Set(stats.BlockSpeed);
+        blockDurationTimer.Set(stats.BlockDuration);
     }
 
 
     void Update()
     {
-        if (blockTimer.Update())
+
+        blockTimer.Update();
+        if (blockDurationTimer.Update())
         {
             highBlock.SetActive(false);
             lowBlock.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            BlockHigh();
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            BlockLow();
-        }
 
     }
 
-    private void BlockHigh()
+    public void BlockHigh()
     {
         if (RemoveEnergy())
         {
@@ -48,7 +44,7 @@ public class PlayerBlock : MonoBehaviour
         }
 
     }
-    private void BlockLow()
+    public void BlockLow()
     {
         if (RemoveEnergy())
         {
@@ -58,13 +54,19 @@ public class PlayerBlock : MonoBehaviour
 
     }
 
+    public bool finishBlocking()
+    {
+        return blockDurationTimer.HasEnded();
+    }
+
 
     private bool RemoveEnergy()
     {
-        if (stats.Energy > 1 && blockTimer.HasEnded())
+        if (stats.Energy > 1 && blockTimer.HasEnded() && blockDurationTimer.HasEnded())
         {
             stats.Energy -= 1;
             blockTimer.Reset();
+            blockDurationTimer.Reset();
             return true;
         }
         return false;

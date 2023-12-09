@@ -7,6 +7,7 @@ public class PlayerAttacks : MonoBehaviour
 {
     private PlayerStats stats;
     private Timer attackTimer;
+    private Timer attackDurationTimer;
 
     [SerializeField] private GameObject highAttack;
     [SerializeField] private GameObject lowAttack;
@@ -16,30 +17,23 @@ public class PlayerAttacks : MonoBehaviour
     {
         stats = GetComponent<PlayerStats>();
         attackTimer = new Timer();
+        attackDurationTimer = new Timer();
         attackTimer.Set(stats.AttackSpeed);
+        attackDurationTimer.Set(stats.AttackDuration);
     }
 
 
     void Update()
     {
-        if (attackTimer.Update())
+        attackTimer.Update();
+        if (attackDurationTimer.Update())
         {
             highAttack.SetActive(false);
             lowAttack.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AttackHigh();
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            AttackLow();
-        }
-
     }
 
-    private void AttackHigh()
+    public void AttackHigh()
     {
         if (RemoveEnergy())
         {
@@ -49,7 +43,7 @@ public class PlayerAttacks : MonoBehaviour
         }
 
     }
-    private void AttackLow()
+    public void AttackLow()
     {
         if (RemoveEnergy())
         {
@@ -59,15 +53,19 @@ public class PlayerAttacks : MonoBehaviour
 
     }
 
-
+    public bool finishAttack()
+    {
+        return attackDurationTimer.HasEnded();
+    }
 
 
     private bool RemoveEnergy()
     {
-        if (stats.Energy > 1 && attackTimer.HasEnded())
+        if (stats.Energy > 1 && attackTimer.HasEnded() && attackDurationTimer.HasEnded())
         {
             stats.Energy -= 1;
             attackTimer.Reset();
+            attackDurationTimer.Reset();
             return true;
         }
         return false;
