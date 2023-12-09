@@ -13,7 +13,7 @@ public class TournamentAdder : MonoBehaviour
     [SerializeField] private TMP_InputField[] inp;
     [SerializeField] private TMP_Text total;
     public string[] PermanentInput = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
-    public int[] TList = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    public int[] TList = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
     public int index;
 
     public void NewPlayer()
@@ -38,7 +38,7 @@ public class TournamentAdder : MonoBehaviour
         for (i = 0; i < index; ++i)
         {
             bool unique = true;
-            num = rnd.Next(index) + 1;
+            num = rnd.Next(index);
             for(j = 0; j < index; ++j )
                 if (num == TList[j])
                     unique = false;
