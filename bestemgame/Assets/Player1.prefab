@@ -126,7 +126,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2596261788568745651}
   - component: {fileID: 4712898209958429222}
-  - component: {fileID: 3503145666705029947}
   m_Layer: 0
   m_Name: gfx
   m_TagString: Untagged
@@ -201,27 +200,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3503145666705029947
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816054386822883664}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06ac07004b0b6f4e6a4b614a097213f5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2766058095991769724
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a24a2a73ae310d41bf45cc3237d8f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 0
   PlayerName: Player
+  nameText: {fileID: 0}
   MaxEnergy: 5
   EnergyRegen: 1
   Energy: 5

@@ -28,8 +28,8 @@ public class PlayerAttacks : MonoBehaviour
         attackTimer.Update();
         if (attackDurationTimer.Update())
         {
-            highAttack.SetActive(false);
-            lowAttack.SetActive(false);
+            //highAttack.SetActive(false);
+            //lowAttack.SetActive(false);
         }
     }
 
@@ -38,7 +38,7 @@ public class PlayerAttacks : MonoBehaviour
         if (RemoveEnergy())
         {
             Debug.Log("HIGH ATTACK");
-            highAttack.SetActive(true);
+            //highAttack.SetActive(true);
 
         }
 
@@ -48,7 +48,7 @@ public class PlayerAttacks : MonoBehaviour
         if (RemoveEnergy())
         {
             Debug.Log("LOW ATTACK");
-            lowAttack.SetActive(true);
+            //lowAttack.SetActive(true);
         }
 
     }

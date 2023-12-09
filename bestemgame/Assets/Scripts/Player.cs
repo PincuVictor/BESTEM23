@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public PlayerStates state;
 
 
+    [SerializeField] Animator anim;
     [SerializeField] private String left;
     [SerializeField] private String right;
     [SerializeField] private String attackHigh;
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
         blocking,
         die
     }
+    private bool allreadyAttacked = false;
+    private bool allreadyBlocked = false;
+
 
 
     private void Update()
@@ -47,7 +51,9 @@ public class Player : MonoBehaviour
         switch (state)
         {
             case PlayerStates.idle:
-
+                anim.SetBool("isWalking", false);
+                anim.SetTrigger("endAttack");
+                anim.SetTrigger("endBlock");
                 if (Input.GetKey(left) || Input.GetKey(right))
                     state = PlayerStates.walking;
 
@@ -62,8 +68,9 @@ public class Player : MonoBehaviour
 
 
             case PlayerStates.walking:
-
-
+                anim.SetBool("isWalking", true);
+                anim.SetTrigger("endAttack");
+                anim.SetTrigger("endBlock");
                 movement.Move(velocity);
 
                 if (velocity.x == 0)
@@ -82,21 +89,28 @@ public class Player : MonoBehaviour
 
 
             case PlayerStates.attacking:
+                
                 velocity.x = 0f;
                 movement.Move(velocity);
 
-                if (Input.GetKey(attackHigh))
+                if (Input.GetKey(attackHigh) && !allreadyAttacked)
                 {
                     attacks.AttackHigh();
+                    anim.SetTrigger("attackHigh");
+                    allreadyAttacked = true;
                 }
 
-                if (Input.GetKey(attackLow))
+                if (Input.GetKey(attackLow) && !allreadyAttacked)
                 {
                     attacks.AttackLow();
+                    anim.SetTrigger("attackLow");
+                    allreadyAttacked = true;
                 }
 
                 if (attacks.finishAttack())
                 {
+                     allreadyAttacked = false;
+                    anim.SetTrigger("endAttack");
                     state = PlayerStates.idle;
                 }
 
@@ -107,18 +121,24 @@ public class Player : MonoBehaviour
                 velocity.x = 0;
                 movement.Move(velocity);
 
-                if (Input.GetKey(blockHigh))
+                if (Input.GetKey(blockHigh) && !allreadyBlocked)
                 {
                     block.BlockHigh();
+                    anim.SetTrigger("blockHigh");
+                    allreadyBlocked = true;
                 }
 
-                if (Input.GetKey(blockLow))
+                if (Input.GetKey(blockLow) && !allreadyBlocked)
                 {
                     block.BlockLow();
+                    anim.SetTrigger("blockLow");
+                    allreadyBlocked = true;
                 }
 
                 if (block.finishBlocking())
                 {
+                    allreadyBlocked = false;
+                    anim.SetTrigger("endBlock");
                     state = PlayerStates.idle;
                 }
 
