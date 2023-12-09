@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcd62248bab2b2547a993e9936b48001
+guid: 8342b51c1ccef935bb8c1372e7d74335
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,33 +81,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -132,102 +119,89 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkRatoi_0
+      name: MainMeniu_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa1823328e0472c1695be68f26b13bdf
-      internalID: -723635674
+      spriteID: d6c679092b68b9a7eb6557cbfe6495e9
+      internalID: 1106136098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRatoi_1
+      name: MainMeniu_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 160
         y: 0
-        width: 17
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faaeb3a4003cd3c649b0071e3147d748
-      internalID: 831410532
+      spriteID: d45a685b95b0e8310bd6a550a0d30615
+      internalID: 1214748874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRatoi_2
+      name: MainMeniu_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 320
         y: 0
-        width: 18
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a89681125c7123998fea62fb70c8dd9
-      internalID: -2121456951
+      spriteID: 6a65c41d51b5bf2b7919c14633874c43
+      internalID: -650068677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkRatoi_3
+      name: MainMeniu_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 480
         y: 0
-        width: 17
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f00eb8b85835e02aaf845583ec54ded
-      internalID: 1004724844
+      spriteID: b61ee878c7125cfeab787df635f65c87
+      internalID: 2089467706
       vertices: []
       indices: 
       edges: []
@@ -243,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WalkRatoi_0: -723635674
-      WalkRatoi_1: 831410532
-      WalkRatoi_2: -2121456951
-      WalkRatoi_3: 1004724844
+      MainMeniu_0: 1106136098
+      MainMeniu_1: 1214748874
+      MainMeniu_2: -650068677
+      MainMeniu_3: 2089467706
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

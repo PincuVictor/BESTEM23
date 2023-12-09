@@ -553,6 +553,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d65666a25ff31e99c1e1dbca37a98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TournamentInfo: {fileID: 0}
+  index: 0
+  PermanentInput:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  TList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &351610527
 Transform:
   m_ObjectHideFlags: 0
