@@ -172,6 +172,9 @@ public class Player : MonoBehaviour
 
 
             case PlayerStates.die:
+                velocity.x = 0;
+                movement.Move(velocity);
+                anim.SetTrigger("isDead");
                 movement.enabled = false;
                 attacks.enabled = false;
                 block.enabled = false;

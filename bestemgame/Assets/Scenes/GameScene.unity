@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae13caa69aa293346bf85f5f78ea96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 2
+  player: {fileID: 1727532309}
 --- !u!61 &198124873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae13caa69aa293346bf85f5f78ea96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 2
+  player: {fileID: 1727532309}
 --- !u!61 &683557628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2846,7 +2846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae13caa69aa293346bf85f5f78ea96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: {fileID: 1243915974}
 --- !u!1 &1079379238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,6 +3256,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 816054386822883664, guid: 662a03c5a7f8b6f19940b95217cb52ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1122580129}
+    - targetCorrespondingSourceObject: {fileID: 816054386822883664, guid: 662a03c5a7f8b6f19940b95217cb52ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1122580130}
     - targetCorrespondingSourceObject: {fileID: 657553265284590309, guid: 662a03c5a7f8b6f19940b95217cb52ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1122580127}
@@ -3336,6 +3339,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1122580130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122580128}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fdc20b52cf778329fcfd9027997349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 1243915969}
 --- !u!1 &1124805229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,6 +3965,7 @@ GameObject:
   - component: {fileID: 1300748528}
   - component: {fileID: 1300748527}
   - component: {fileID: 1300748526}
+  - component: {fileID: 1300748529}
   m_Layer: 0
   m_Name: gfx
   m_TagString: Untagged
@@ -4046,6 +4063,19 @@ Transform:
   - {fileID: 274096265}
   m_Father: {fileID: 1727532311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1300748529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300748525}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fdc20b52cf778329fcfd9027997349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 1727532303}
 --- !u!1 &1323476188
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+  timeRef: 0
   timerText: {fileID: 731515435}
   timeScaleText: {fileID: 1323476189}
 --- !u!4 &1427236324
@@ -6095,7 +6126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae13caa69aa293346bf85f5f78ea96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: {fileID: 1243915974}
 --- !u!1 &1931769120
 GameObject:
   m_ObjectHideFlags: 0
