@@ -11,6 +11,8 @@ public class PlayerGetHit : MonoBehaviour
         {
             //GameManager.managerInstance.KillPlayer(player);
             player.state = Player.PlayerStates.die;
+
+            
         }
     }
 }
