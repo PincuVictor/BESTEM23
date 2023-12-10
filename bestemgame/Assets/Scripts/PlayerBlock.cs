@@ -8,8 +8,8 @@ public class PlayerBlock : MonoBehaviour
     private Timer blockTimer;
     private Timer blockDurationTimer;
 
-    [SerializeField] private GameObject highBlock;
-    [SerializeField] private GameObject lowBlock;
+    [SerializeField] private GameObject highHitbox;
+    [SerializeField] private GameObject lowHitbox;
 
 
     void Awake()
@@ -26,10 +26,12 @@ public class PlayerBlock : MonoBehaviour
     {
 
         blockTimer.Update();
-        if (blockDurationTimer.Update())
+        blockDurationTimer.Update();
+
+        if (blockDurationTimer.HasEnded())
         {
-            highBlock.SetActive(false);
-            lowBlock.SetActive(false);
+            highHitbox.SetActive(true);
+            lowHitbox.SetActive(true);
         }
 
     }
@@ -39,7 +41,7 @@ public class PlayerBlock : MonoBehaviour
         if (RemoveEnergy())
         {
             Debug.Log("HIGH BLOCK");
-            highBlock.SetActive(true);
+            highHitbox.SetActive(false);
 
         }
 
@@ -49,13 +51,14 @@ public class PlayerBlock : MonoBehaviour
         if (RemoveEnergy())
         {
             Debug.Log("LOW BLOCK");
-            lowBlock.SetActive(true);
+            lowHitbox.SetActive(false);
         }
 
     }
 
     public bool finishBlocking()
     {
+
         return blockDurationTimer.HasEnded();
     }
 

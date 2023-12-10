@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerGetHit : MonoBehaviour
 {
     public int player;
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerStay2D(Collider2D collider)
     {
         if(collider.tag == "attack")
         {
