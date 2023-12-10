@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public PlayerBlock block;
     public PlayerStates state;
 
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+    public AudioClip blockSound;
+
 
     [SerializeField] Animator anim;
     [SerializeField] private String left;
@@ -95,16 +99,26 @@ public class Player : MonoBehaviour
 
                 if (Input.GetKey(attackHigh) && !allreadyAttacked)
                 {
-                    attacks.AttackHigh();
-                    anim.SetTrigger("attackHigh");
-                    allreadyAttacked = true;
+                    if (attacks.AttackHigh())
+                    {
+                        anim.SetTrigger("attackHigh");
+                        allreadyAttacked = true;
+                        audioSource.clip = attackSound;
+                        audioSource.volume = 1f;
+                        audioSource.Play();
+                    }
                 }
 
                 if (Input.GetKey(attackLow) && !allreadyAttacked)
                 {
-                    attacks.AttackLow();
-                    anim.SetTrigger("attackLow");
-                    allreadyAttacked = true;
+                    if (attacks.AttackLow())
+                    {
+                        anim.SetTrigger("attackLow");
+                        allreadyAttacked = true;
+                        audioSource.clip = attackSound;
+                        audioSource.volume = 1f;
+                        audioSource.Play();
+                    }
                 }
 
                 if (attacks.finishAttack())
@@ -123,16 +137,27 @@ public class Player : MonoBehaviour
 
                 if (Input.GetKey(blockHigh) && !allreadyBlocked)
                 {
-                    block.BlockHigh();
-                    anim.SetTrigger("blockHigh");
-                    allreadyBlocked = true;
+                    if (block.BlockHigh())
+                    {
+                        anim.SetTrigger("blockHigh");
+                        allreadyBlocked = true;
+                        audioSource.clip = blockSound;
+                        audioSource.volume = 0.5f;
+                        audioSource.Play();
+                    }
                 }
 
                 if (Input.GetKey(blockLow) && !allreadyBlocked)
                 {
-                    block.BlockLow();
-                    anim.SetTrigger("blockLow");
-                    allreadyBlocked = true;
+                    if (block.BlockLow())
+                    {
+                        anim.SetTrigger("blockLow");
+                        allreadyBlocked = true;
+                        audioSource.clip = blockSound;
+                        audioSource.volume = 0.5f;
+                        audioSource.Play();
+
+                    }
                 }
 
                 if (block.finishBlocking())

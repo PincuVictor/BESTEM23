@@ -13,7 +13,7 @@ public class Next : MonoBehaviour
     private void Start()
     {
         int i;
-        if (textBrackets != null)
+        if (textBrackets != null && text == null)
         {
             for (i = 0; i <= 7; ++i)
             {

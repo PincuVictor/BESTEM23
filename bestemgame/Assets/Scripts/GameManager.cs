@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public string[] PermanentInput = {"", "", "", "","", "", "", "","", "", "", "","", "", "", "", ""};
     public int[] TList = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
+
+
     public int currentPlayer1IndexInList = 0;
     public int currentPlayer2IndexInList = 0;
 

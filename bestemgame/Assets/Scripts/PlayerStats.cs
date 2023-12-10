@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     public float MaxEnergy = 5.0f;
     public float EnergyRegen = 0.01f;
     public float Energy = 5.0f;
+    public List<Slider> energySliders;
 
     public float AttackSpeed = 0.25f;
     public float AttackDuration = 0.25f;
@@ -35,5 +37,23 @@ public class PlayerStats : MonoBehaviour
         {
             Energy += EnergyRegen * Time.deltaTime;
         }
+
+        for (int i = 0; i < energySliders.Count; i++)
+        {
+            if (i < (int)Energy)
+            {
+                energySliders[i].value = 1;
+            }
+            else if(i == (int) Energy)
+            {
+
+                energySliders[i].value = Energy - (int)Energy;
+            }
+            else
+            {
+                energySliders[i].value = 0;
+            }
+        }
+        
     }
 }

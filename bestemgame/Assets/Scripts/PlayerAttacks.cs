@@ -33,23 +33,26 @@ public class PlayerAttacks : MonoBehaviour
         }
     }
 
-    public void AttackHigh()
+    public bool AttackHigh()
     {
         if (RemoveEnergy())
         {
             Debug.Log("HIGH ATTACK");
             //highAttack.SetActive(true);
-
+            return true;
         }
+        return false;
 
     }
-    public void AttackLow()
+    public bool AttackLow()
     {
         if (RemoveEnergy())
         {
             Debug.Log("LOW ATTACK");
             //lowAttack.SetActive(true);
+            return true;
         }
+        return false;
 
     }
 

@@ -36,24 +36,25 @@ public class PlayerBlock : MonoBehaviour
 
     }
 
-    public void BlockHigh()
+    public bool BlockHigh()
     {
         if (RemoveEnergy())
         {
             Debug.Log("HIGH BLOCK");
             highHitbox.SetActive(false);
-
+            return true;
         }
-
+        return false;
     }
-    public void BlockLow()
+    public bool BlockLow()
     {
         if (RemoveEnergy())
         {
             Debug.Log("LOW BLOCK");
             lowHitbox.SetActive(false);
+            return true;
         }
-
+        return false;
     }
 
     public bool finishBlocking()
