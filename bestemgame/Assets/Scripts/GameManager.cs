@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public TournamentAdder TournamentInfo;
     public static GameManager managerInstance;
+    public int Round = 0;
     public int index = 0;
     public string[] PermanentInput = {"", "", "", "","", "", "", "","", "", "", "","", "", "", "", ""};
     public int[] TList = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
@@ -74,20 +75,17 @@ public class GameManager : MonoBehaviour
     public void NewRound()
     {
         List<int> players = new List<int>();
-
-        for (int i = currentPlayer2IndexInList+1; i < TList.Length; i++)
+        if (managerInstance.Round == 0)
         {
-            if (TList[i] != -1)
-            {
-                players.Add(i);
-            }
-            if (players.Count >= 2)
-                break;
+            currentPlayer1IndexInList = 0;
+            currentPlayer2IndexInList = 1;
+            managerInstance.Round++;
+            SceneManager.LoadScene("GameScene");
         }
-
-        if(players.Count != 2)
+        else
         {
-            for (int i = 0; i < currentPlayer2IndexInList + 1; i++)
+                
+            for (int i = currentPlayer2IndexInList+1; i < TList.Length; i++)
             {
                 if (TList[i] != -1)
                 {
@@ -96,21 +94,34 @@ public class GameManager : MonoBehaviour
                 if (players.Count >= 2)
                     break;
             }
+
+            if(players.Count != 2)
+            {
+                for (int i = 0; i < currentPlayer2IndexInList + 1; i++)
+                {
+                    if (TList[i] != -1)
+                    {
+                        players.Add(i);
+                    }
+                    if (players.Count >= 2)
+                        break;
+                }
+            }
+
+            if (players.Count == 1)
+            {
+                SceneManager.LoadScene("WinnerScene");
+            }
+            else
+            {
+                currentPlayer1IndexInList = players[0];
+                currentPlayer2IndexInList = players[1];
+                SceneManager.LoadScene("GameScene");
+            }
+
+
+
+
         }
-
-        if (players.Count == 1)
-        {
-            SceneManager.LoadScene("WinnerScene");
-        }
-        else
-        {
-            currentPlayer1IndexInList = players[0];
-            currentPlayer2IndexInList = players[1];
-            SceneManager.LoadScene("GameScene");
-        }
-
-
-
-
     }
 }

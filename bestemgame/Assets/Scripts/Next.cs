@@ -9,11 +9,23 @@ using Object = System.Object;
 public class Next : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text[] textBrackets;
     private void Start()
     {
+        int i;
+        if (textBrackets != null)
+        {
+            for (i = 0; i <= 7; ++i)
+            {
+                if (GameManager.managerInstance.TList[i] != -1) 
+                    textBrackets[i].text = GameManager.managerInstance.PermanentInput[GameManager.managerInstance.TList[i]];
+                else 
+                    textBrackets[i].text = "-";
+            }
+        }
         if (text != null)
         {
-            for (int i = 0; i < GameManager.managerInstance.index; ++i)
+            for (i = 0; i < GameManager.managerInstance.index; ++i)
             {
                 if (GameManager.managerInstance.TList[i] != -1)
                 {
@@ -30,6 +42,7 @@ public class Next : MonoBehaviour
     }
     public void OnClickNextRound()
     {
-        GameManager.managerInstance.NewRound();
+            GameManager.managerInstance.NewRound();
+
     }
 }

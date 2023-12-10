@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
 
@@ -48,7 +49,8 @@ public class TournamentAdder : MonoBehaviour
                 i--;
         }
         GameManager.managerInstance.Tournament();
-        
+        SceneManager.LoadScene("IntermissionScene");
+
     }
 
 }
