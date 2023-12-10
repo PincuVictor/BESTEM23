@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int index = 0;
     public string[] PermanentInput = {"", "", "", "","", "", "", "","", "", "", "","", "", "", "", ""};
     public int[] TList = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-
+    public float time;
 
 
     public int currentPlayer1IndexInList = 0;
